@@ -1,10 +1,15 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+let taskNumber = 0;
+
 
 
 function addTask(){
     if(inputBox.value === ''){
         alert("You must write something!");
+    }
+    else if (taskNumber > 50) {
+      alert("You should not add more than 50 tasks! Please delete some before add another.");
     }
     else {
         let li = document.createElement("li");
@@ -13,6 +18,7 @@ function addTask(){
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
+        taskNumber++;
     }
     inputBox.value = '';
     saveData();

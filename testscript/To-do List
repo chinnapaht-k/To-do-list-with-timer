@@ -1,6 +1,10 @@
 from selenium import webdriver
+import selenium
+
+print(selenium.__version__)
 
 driver = webdriver.Chrome()
 
+url = "https://google.com/"
 
-driver.get("http://127.0.0.1:5500/index.html")
+driver.get(url)
