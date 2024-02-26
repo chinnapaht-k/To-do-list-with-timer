@@ -11,6 +11,9 @@ function addTask(){
     else if (taskNumber > 50) {
       alert("You should not add more than 50 tasks! Please delete some before add another.");
     }
+    else if (inputBox.value.length > 500){
+      alert("You should enter less than 500 characters in one task. Please try again.");
+    }
     else {
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
