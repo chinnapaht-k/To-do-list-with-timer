@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body> 
+    <div class="container">
+      <div class="back-homepage">
+        <a class = "close" href="/"><ion-icon name="close-outline"></ion-icon></a>
+      </div>
+        <div class="todo-app" id="login">
+          <h2>Setting</h2>
+          <h5>Pomodoro Time: <input type="number" placeholder="minutes" id="pomodoro-time" name="pomodoro-time"></h5>
+          <h5>Short Break Time: <input type="number" placeholder="minutes" id="shortbreak-time" name="pomodoro-time"></h5>
+          <h5>Long Break Time: <input type="number" placeholder="minutes" id="longbreak-time" name="pomodoro-time"></h5>
+          <button type="submit" class="btn" id="setting-time" onclick="setNewTime()">Confirm</button>
+        </div>
+    </div>
+</body>
+<script src="/static/script/script.js"></script>
+</html>

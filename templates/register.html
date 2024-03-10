@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  {% block
+    content %}
+    <div class="container">
+        <div class="back-homepage">
+            <a class = "close" href="/"><ion-icon name="close-outline"></ion-icon></a>
+          </div>
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+            messages %} {% for category, message in messages %} {% if category ==
+            'error' %}
+          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{message}}
+      </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message}}
+        <button type="button" class="close" data-dismiss="alert">
+        </button>
+      </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+        <div class="todo-app" id="login">
+          <h2>Sign up</h2>
+          <form action="/register" method="POST">
+          <div class="input-box row">
+            <input id="email" type="text" placeholder="Username" name="username" required>
+          </div>
+          <div class="input-box row">
+            <input id="password" type="password" placeholder="Password" name="password" required>
+          </div>
+          <div class="input-box row">
+            <input id="check-password" type="password" placeholder="Re enter your password again" name="re-password"required>
+          </div>
+          <div id="login-btn">
+          <button type="submit" class="btn">Sign up</button>
+          </div>
+        </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

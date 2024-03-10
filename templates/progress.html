@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body> 
+    <div class="container">
+      <div class="back-homepage">
+        <a class = "close" href="/"><ion-icon name="close-outline"></ion-icon></a>
+      </div>
+        <div class="todo-app" id="login">
+          <h2>Progress</h2>
+          <h4>Hello {{current_user.username}}</h4>
+          <h5>All task done: {{current_user.task}}</h2>
+          <h5>All focus time: {{current_user.time}}</h2>
+        </div>
+    </div>
+</body>
+<script src="../script.js"></script>
+</html>

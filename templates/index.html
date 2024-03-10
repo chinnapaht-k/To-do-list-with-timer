@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+      <div class="top-page">
+        {% if user.is_authenticated%}
+        <a
+        class="popup-button"
+        href="#"
+      >
+        Homepage
+      </a>
+      <a
+         class="popup-button" id = "show-login"
+         href ="/logout"
+       >
+         Logout
+       </a>
+    <a
+         class="popup-button"
+         href="/progress"
+       >
+         Progress
+       <a>
+       {% else %}
+       <a
+       class="popup-button"
+       href="#"
+     >
+       Homepage
+     </a>
+       <a
+         class="popup-button" id = "show-login"
+         href ="/login"
+       >
+         Login
+       </a>
+       {% endif %}
+
+      </div>
+        <div class="todo-app">
+            <h2>To-Do List <img src="/static/images/icon.png" alt="logo"></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()">Add</button>
+            </div>
+
+            <ul id="list-container">
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li> -->
+            </ul>
+        </div>
+    <main class="app todo-app">
+        <div class="timer">
+          <div class="button-group mode-buttons" id="js-mode-buttons">
+            <button
+              data-mode="pomodoro"
+              class="button active mode-button"
+              id="js-pomodoro"
+            >
+              Pomodoro
+            </button>
+            <button
+              data-mode="shortBreak"
+              class="button mode-button"
+              id="js-short-break"
+            >
+              Short break
+            </button>
+            <button
+              data-mode="longBreak"
+              class="button mode-button"
+              id="js-long-break"
+            >
+              Long break
+            </button>
+          </div>
+          <div class="clock" id="js-clock">
+            <span id="js-minutes">25</span>
+            <span class="separator">:</span>
+            <span id="js-seconds">00</span>
+          </div>
+          <button class="main-button" data-action="start" id="js-btn">
+            Start
+          </button>
+        </div>
+      </main>
+      <div class="hidden">
+        <audio src="/static/sound/backtowork.mp3" data-sound="pomodoro"></audio>
+        <audio src="/static/sound/break.mp3" data-sound="shortBreak"></audio>
+        <audio src="/static/sound/break.mp3" data-sound="longBreak"></audio>
+      </div>
+    </div>
+</body>
+<script src="/static/script/script.js"></script>
+</html>
